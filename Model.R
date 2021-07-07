@@ -1,8 +1,21 @@
 #' Prepare the model
 #'
-#'@export
+#'@ df_p: List containing training and test dataset. First element in list should be training dataset and second element in the list should be test dataset
+#'@ k: This is "q" that is number of features to sample
+#'@ ncomp: Number of latent features
+#'@ summary_ci: confidence level (CL) used to filter the features in step 1. It can take value in between 0 and 1.
+#'@ varmax: Number of features to be removed or added to the target cluster. It is "cs -  smallest mean CV value". 
+#'@ seeder: It is used to control the randomness in the model 
+#'@ i_numb: Level of interactions. Currently, it is fixed at 2.It is experimental and its values should not be changed. 
+#'@ effectsize: What is the expected effectsize of features. "Large", "Small" and "Medium". It estimates the number of times a feature needs to be sampled. The code also allows to input user defined numeric value.
+#'@ coarse_FS: if TRUE, stage two of feature selection, i.e., unsupervised learning is performed
+#'@ Fine_FS: if TRUE, stage three of feature selection, i.e., supervised learning is performed
+#'@ prediction_type: Prediction metric used for analysis. Currently, it is fixed to root mean squre error (RMSE)
+#'@ predict_method: The technique used to build the final predictive model. Two options are defined: regression ("reg") and adaptive ridge regression ("aridge")
+#'@ model_perf, strict_anova, semi_strict, kmean_type: Some experimental parameters explored. The default value to 
+
 #'@import plyr
-Prop_mod = function(df_p, seeder=1, ncomp=3, i_numb=2, k=5, effectsize=13, model_perf="None", coarse_FS = T, Fine_FS =T, summary_ci = 0.95, strict_anova=T, semi_strict=T, varmax=10, prediction_type = "rmse", predict_method = "reg", kmean_type = "Normal"){
+Prop_mod = function(df_p, seeder=1, ncomp=3, i_numb=2, k=5, effectsize=13, model_perf="None", coarse_FS = T, Fine_FS =T, summary_ci = 0.95, strict_anova=F, semi_strict=F, varmax=10, prediction_type = "rmse", predict_method = "reg", kmean_type = "Normal"){
   # cat("ok")
 
   # Run proposed methods
