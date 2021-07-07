@@ -97,3 +97,25 @@ dataset=function(varnum, setting="No_Correlation", var=c("Mar", "No_Mar", "No_Va
   return(list(train=traindf,test=validationdf))
 }
 
+#'@export
+data_fit =  function(datatype = c("simulated", "real"), param = list(miss = 33, corr = 0.9, cutter = 10, seed =1, data_code=1, test_train_ratio=0.2, varnum = 15, setting= "Correlation", main_var=10, var_effect=c(0.5, -0.5), correlation_var=15, correlation_val=5, high_dim=T, train_sample=500, var = "Mar")){
+  if(datatype == "real"){
+    # print("Enter")
+    # print(param)
+    hyperpara=data.frame(miss = param$miss, corr = param$corr, cutter = param$cutter, seed= param$seed, data_code = param$data_code)
+    df_p=data_prep(hyperpara[1,], seed = param$seed, test_train_ratio = param$test_train_ratio)
+    df_p=df_p[[1]]
+  }
+  else{
+    df_p=dataset(varnum = param$varnum, setting= param$setting, var= param$var, main_var=param$main_var, var_effect=param$var_effect, correlation_var=param$correlation_var, correlation_val=param$correlation_val, high_dim=param$high_dim, train_sample=param$train_sample, seed = param$seed)
+  }
+  {
+    # Generate Dataset
+    realnames=names(df_p[[1]])
+    # print(realnames)
+    fakename=paste0("X",seq(1:(length(realnames)-1)))
+    names(df_p[[1]])[1:(length(realnames)-1)]=fakename
+    names(df_p[[2]])[1:(length(realnames)-1)]=fakename
+  }
+  return(df_p)
+}
