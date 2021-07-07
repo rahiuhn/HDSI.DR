@@ -40,4 +40,4 @@ res= fit_function(datatype=c("simulated"), param = list(seed =1, varnum = 15, se
 res
 ```
 
-The output ```res``` is a list. 
+The output ```res``` is a list. The first element in the list provide the performance of the algorithm in the test dataset and second element provides the list of features selected by the algorithm.
