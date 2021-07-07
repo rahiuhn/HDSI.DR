@@ -94,27 +94,3 @@ fit_function = function(datatype=c("simulated", "real"), param = list(miss = 33,
   Performance = Prop_mod(df_p = df_p, seeder = seeder, ncomp=ncomp, i_numb=i_numb, k=k, effectsize=effectsize, model_perf=model_perf, coarse_FS = coarse_FS, Fine_FS =Fine_FS, summary_ci = summary_ci, strict_anova=strict_anova, semi_strict=semi_strict, varmax=varmax, kmean_type = kmean_type, predict_method = predict_method)
   return(Performance)
 }
-
-#'@export
-fit_function_2 = function(datatype=c("simulated", "real"),
-                          param = list(miss = 33, corr = 0.9, cutter = 10, seed =1, data_code=1, test_train_ratio=0.2, varnum = 15, setting= "Correlation", main_var=10, var_effect=c(0.5, -0.5), correlation_var=15, correlation_val=5, high_dim=T, train_sample=500, var = "Mar"), non_optimal_para = list( seeder=1,i_numb=2,model_perf="None", coarse_FS = T, Fine_FS =T,strict_anova=F, semi_strict=F, kmean_type = "Normal", predict_method = "aridge"), ncomp=3,  k=5, effectsize=13,  summary_ci = 0.95,  varmax=10){
-  # Prepare the dataset
-  df_p = data_fit(datatype = datatype, param = param)
-  # str(df_p)
-  # Perform the model analysis
-  # print(c(kmean_type,predict_method))
-  # Define the non_optimal para
-  {
-    seeder = non_optimal_para$seeder
-    i_numb = non_optimal_para$i_numb
-    model_perf = non_optimal_para$model_perf
-    coarse_FS = non_optimal_para$coarse_FS
-    Fine_FS = non_optimal_para$Fine_FS
-    strict_anova = non_optimal_para$strict_anova
-    semi_strict = non_optimal_para$semi_strict
-    kmean_type = non_optimal_para$kmean_type
-    predict_method = non_optimal_para$predict_method
-  }
-  Performance = Prop_mod(df_p = df_p, seeder = seeder, ncomp=ncomp, i_numb=i_numb, k=k, effectsize=effectsize, model_perf=model_perf, coarse_FS = coarse_FS, Fine_FS =Fine_FS, summary_ci = summary_ci, strict_anova=strict_anova, semi_strict=semi_strict, varmax=varmax, kmean_type = kmean_type, predict_method = predict_method)
-  return(Performance)
-}
