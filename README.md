@@ -20,8 +20,9 @@ future, future.apply, purrr, MLmetrics, reshape2, ggplot2, readxl)
 This step will generate a simulated dataset and select the best RHDSI hyperparameters for the dataset. In the current example, dataset contains 15 marginal features with 19 target features (10 marginal features and 9 interaction features). All 15 marginal features are correlated with pariwise correlation of 0.5. The dataset has only 100 samples in the training set and 500 samples in the test set.
 
 ```
-best_para = cv_hyperpara(datatype=c("simulated"), param = list(seed =1, test_train_ratio=NA, varnum = 15, setting= "Correlation", main_var=10, var_effect=c(0.5, -0.5), correlation_var=15, 
-correlation_val=5, high_dim=T, train_sample=100, var = "Mar"), seeder=1, effectsize=13, optimtype = "GA", cv = T, predict_method = "reg")
+best_para = cv_hyperpara(datatype=c("simulated"), param = list(seed =1, test_train_ratio=NA, varnum = 15, setting= "Correlation", 
+                         main_var=10, var_effect=c(0.5, -0.5), correlation_var=15, correlation_val=5, high_dim=T, train_sample=100, 
+                         var = "Mar"), seeder=1, effectsize=13, optimtype = "GA", cv = T, predict_method = "reg")
 best_para = as.numeric(best_para)
 print(best_para)
 ```
@@ -31,7 +32,9 @@ print(best_para)
 Use the best values of hyperparameters to run RHDSI algorithm to get final results.
 
 ```
-res= fit_function(datatype=c("simulated"), param = list(seed =1, varnum = 15, setting= "Correlation", main_var=10, var_effect=c(0.5, -0.5), correlation_var=15, correlation_val=5, high_dim=T, train_sample=100, var = "Mar"), seeder=i, ncomp=best_para[2], k=best_para[1], effectsize=13, summary_ci = best_para[3], varmax=best_para[4], predict_method = "reg")
+res= fit_function(datatype=c("simulated"), param = list(seed =1, varnum = 15, setting= "Correlation", main_var=10, var_effect=c(0.5, -0.5), 
+                  correlation_var=15, correlation_val=5, high_dim=T, train_sample=100, var = "Mar"), seeder=i, ncomp=best_para[2], 
+                  k=best_para[1], effectsize=13, summary_ci = best_para[3], varmax=best_para[4], predict_method = "reg")
 res
 ```
 
