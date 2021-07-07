@@ -26,7 +26,7 @@ best_para = cv_hyperpara(datatype=c("simulated"), param = list(seed =1, test_tra
 best_para = as.numeric(best_para)
 print(best_para)
 ```
-```param``` takes the various arguments needed to generate simulated dataset. The four hyperparameters namely number of features used in sample (q) [```k```], number of latent factors (Lf) [```ncomp```], confidence level for selecting features in Stage I (CL) [```summary_ci```] and number of features to remove from the target cluster (Af) in stage II [```varmax```]. 
+```param``` takes the various arguments needed to generate simulated dataset. The four hyperparameters namely number of features used in sample (q) [```k```], number of latent factors (Lf) [```ncomp```], confidence level for selecting features in Stage I (CL) [```summary_ci```] and number of features to remove from the target cluster (Af) in Stage II [```varmax```]. 
 
 ## Perform RHDSI
 Use the best values of hyperparameters to run RHDSI algorithm to get final results.
