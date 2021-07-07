@@ -16,7 +16,7 @@ library(pacman)
 pacman::p_load( memoise, dplyr, plyr, stringr, stats, scales, caret, magrittr, janitor, naturalsort, plsdepot, spatstat.utils, GA, 
 future, future.apply, purrr, MLmetrics, reshape2, ggplot2, readxl) 
 ```
-## Perform hyperparameter optimization on Simulated Datset
+## Perform hyperparameter optimization on simulated datset
 This step will generate a simulated dataset and select the best RHDSI hyperparameters for the dataset. In the current example, dataset contains 15 marginal features with 19 target features (10 marginal features and 9 interaction features). All 15 marginal features are correlated with pariwise correlation of 0.5. The dataset has only 100 samples in the training set and 500 samples in the test set.
 
 ```
@@ -34,4 +34,4 @@ res= fit_function(datatype=c("simulated"), param = list(seed =1, varnum = 15, se
 res
 ```
 
-The output ```res``` is a list. It contains 
+The output ```res``` is a list. 
