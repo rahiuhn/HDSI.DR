@@ -1,7 +1,7 @@
 #' Prepare the model
 #'
 #'@ df_p: List containing training and test dataset. First element in list should be training dataset and second element in the list should be test dataset
-#'@ k: This is "q" that is number of features to sample
+#'@ k: This is "q" ,i.e., number of features to sample
 #'@ ncomp: Number of latent features
 #'@ summary_ci: confidence level (CL) used to filter the features in step 1. It can take value in between 0 and 1.
 #'@ varmax: Number of features to be removed or added to the target cluster. It is "cs -  smallest mean CV value". 
