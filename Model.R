@@ -12,7 +12,7 @@
 #'@ Fine_FS: if TRUE, stage three of feature selection, i.e., supervised learning is performed
 #'@ prediction_type: Prediction metric used for analysis. Currently, it is fixed to root mean squre error (RMSE)
 #'@ predict_method: The technique used to build the final predictive model. Two options are defined: regression ("reg") and adaptive ridge regression ("aridge")
-#'@ model_perf, strict_anova, semi_strict, kmean_type: Some experimental parameters explored. The default value to 
+#'@ model_perf, strict_anova, semi_strict, kmean_type: Some experimental parameters explored. The values should not be changed.
 
 #'@import plyr
 Prop_mod = function(df_p, seeder=1, ncomp=3, i_numb=2, k=5, effectsize=13, model_perf="None", coarse_FS = T, Fine_FS =T, summary_ci = 0.95, strict_anova=F, semi_strict=F, varmax=10, prediction_type = "rmse", predict_method = "reg", kmean_type = "Normal"){
