@@ -1,7 +1,17 @@
-#' The functionS in this file prepare the dataset for the modeling
+#' The function in this file prepare the dataset for the modeling. Currently test dataset size is fixed at 500 samples
 #'
 #'
-#'@export
+#'@varnum: Number of features,p, in the model which is equal to sum of marginal target features and noise features
+#'@setting: Should the features have any correlation or not. Two options: "No_Correlation" or "Correlation"
+#'@var: Define the type of target features. "Mar" means both marginal and interaction terms are created as target features, "No_Mar" means only interaction terms are created as target features and "No_Var" mean null model with no target features is created.
+#'@seed: Control the random seed generator 
+#'@main_var: Number of target features in the model
+#'@var_effect: Effect size of each target features. The input should be a vector.
+#'@correlation_var: Number of marginal features with correlation.
+#'@correlation_val: Covariance value for the correlated features. Perfect Positive Correlation is 10. The input should be a vector.
+#'@high_dim: Different ways to just generate data. Use this to generate high dimensional data
+#'@train_sample: Sample size of training sample
+
 # Generate the artificial dataset
 dataset=function(varnum, setting="No_Correlation", var=c("Mar", "No_Mar", "No_Var"), seed=2, main_var=10, var_effect=0.5, correlation_var=15, correlation_val=5, high_dim=T, train_sample=500){
 
