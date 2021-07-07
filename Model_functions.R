@@ -1,4 +1,4 @@
-#' The functionS in this file define the various functions used for running the model
+#' The functions in this file define the various functions used for running the model
 #'
 
 
