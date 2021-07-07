@@ -3,7 +3,7 @@
 #' @ optimtypE: Type of optimization algorithm used. Current options are Geneltic Algorithm ("GA") or Grid Search ("Grid"). 
 #' @ cv: if TRUE, 5-fold cross validation of the results is performed 
 #' @ df_p: List of dataset containing training dataset. First element of list should be training dataset. 
-#' @ k = search range for q, i.e., number of features sampled in each sample dataset
+#' @ k = search range for q, i.e., number of features to sample
 #' @ ncomp= Search range for latent factors (Lf) 
 #' @ summary_ci = Search range for confidence level (CL)
 #' @ varmax = Search range for Af, i.e., number of features to be added or removed from target cluster 
