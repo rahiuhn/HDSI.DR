@@ -5,7 +5,7 @@
 #'@setting: Should the features have any correlation or not. Two options: "No_Correlation" or "Correlation"
 #'@var: Define the type of target features. "Mar" means both marginal and interaction terms are created as target features, "No_Mar" means only interaction terms are created as target features and "No_Var" mean null model with no target features is created.
 #'@seed: Control the random seed generator 
-#'@main_var: Number of target features in the model
+#'@main_var: Number of target marginal features in the model. Target Interaction features will be main_var-1.
 #'@var_effect: Effect size of each target features. The input should be a vector.
 #'@correlation_var: Number of marginal features with correlation.
 #'@correlation_val: Covariance value for the correlated features. Perfect Positive Correlation is 10. The input should be a vector.
